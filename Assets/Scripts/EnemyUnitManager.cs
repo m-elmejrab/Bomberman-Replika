@@ -25,7 +25,21 @@ public class EnemyUnitManager : MonoBehaviour
         {
             GameObject enemy = Instantiate(enemyPrefab, fieldController.GetAnEmptyTilePosition(), Quaternion.identity);
             enemy.transform.SetParent(transform);
+            enemy.GetComponent<EnemyHealth>().EnemyDied += EnemyDeathEventHandler;
             enemies.Add(enemy);
+        }
+    }
+
+    private void EnemyDeathEventHandler(GameObject enemyWhichDied)
+    {
+        enemies.Remove(enemyWhichDied);
+        if(enemies.Count <=2 && enemies.Count >0)
+        {
+            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+            foreach(GameObject enemy in enemies)
+            {
+                enemy.GetComponent<EnemyMovement>().StartMovingSmartly(playerObj);
+            }
         }
     }
 }

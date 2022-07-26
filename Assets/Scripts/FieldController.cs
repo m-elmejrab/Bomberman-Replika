@@ -121,4 +121,13 @@ public class FieldController : MonoBehaviour
 
         return emptyPosition;
     }
+
+    public void TileExploded(Vector3 position)
+    {
+        Vector3Int intPosition = Vector3Int.FloorToInt(position);
+        if (destructibleMap.HasTile(intPosition))
+        {
+            destructibleMap.DeleteCells(intPosition, new Vector3Int(1,1,0));
+        }
+    }
 }
