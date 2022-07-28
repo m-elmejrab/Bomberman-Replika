@@ -15,6 +15,7 @@ public class FieldController : MonoBehaviour
     [SerializeField] Tilemap groundMap;
     [SerializeField] Tilemap nonDestructibleMap;
     [SerializeField] Tilemap destructibleMap;
+    [SerializeField] int pointsForDestructibleObj;
 
 
     void Awake()
@@ -109,8 +110,8 @@ public class FieldController : MonoBehaviour
 
         while (!emptyTileFound)
         {
-            int xIndex = Random.Range(0, numOfColumns);
-            int yIndex = Random.Range(0, numOfRows);
+            int xIndex = Random.Range(1, numOfColumns - 1);
+            int yIndex = Random.Range(1, numOfRows - 1);
 
             if (!destructibleMap.HasTile(new Vector3Int(xIndex, yIndex, 0)) && !nonDestructibleMap.HasTile(new Vector3Int(xIndex, yIndex, 0)))
             {
@@ -127,7 +128,8 @@ public class FieldController : MonoBehaviour
         Vector3Int intPosition = Vector3Int.FloorToInt(position);
         if (destructibleMap.HasTile(intPosition))
         {
-            destructibleMap.DeleteCells(intPosition, new Vector3Int(1,1,0));
+            destructibleMap.DeleteCells(intPosition, new Vector3Int(1, 1, 0));
+            GameManager.instance.UpdateScore(pointsForDestructibleObj);
         }
     }
 }

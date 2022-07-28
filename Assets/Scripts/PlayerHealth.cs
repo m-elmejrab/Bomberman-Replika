@@ -9,18 +9,13 @@ public class PlayerHealth : MonoBehaviour, IKillable
     {
         if (other.CompareTag("Enemy"))
         {
-            KillPlayer();
+            Kill();
         }
-    }
-
-    private void KillPlayer()
-    {
-        Debug.Log("Player Died");
     }
 
     public void Kill()
     {
-        Debug.Log("Player Exploded");
+        GameManager.instance.GameOver(false);
 
     }
 }

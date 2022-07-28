@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyUnitManager : MonoBehaviour
 {
     [SerializeField] int numOfEnemies;
+    [SerializeField] int numWhenEnemiesStartMovingSmartly;
     [SerializeField] GameObject enemyPrefab;
     FieldController fieldController;
     List<GameObject> enemies = new List<GameObject>();
@@ -13,7 +14,7 @@ public class EnemyUnitManager : MonoBehaviour
 
     void Start()
     {
-        
+
         fieldController = GameObject.FindGameObjectWithTag("FieldController").GetComponent<FieldController>();
         CreateEnemies();
 
@@ -33,13 +34,18 @@ public class EnemyUnitManager : MonoBehaviour
     private void EnemyDeathEventHandler(GameObject enemyWhichDied)
     {
         enemies.Remove(enemyWhichDied);
-        if(enemies.Count <=2 && enemies.Count >0)
+        if (enemies.Count <= numWhenEnemiesStartMovingSmartly && enemies.Count > 0)
         {
             GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
-            foreach(GameObject enemy in enemies)
+            foreach (GameObject enemy in enemies)
             {
                 enemy.GetComponent<EnemyMovement>().StartMovingSmartly(playerObj);
             }
+        }
+
+        if (enemies.Count <= 0)
+        {
+            GameManager.instance.GameOver(true);
         }
     }
 }
