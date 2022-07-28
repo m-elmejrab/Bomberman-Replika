@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8223453876665002616}
   - component: {fileID: 4868125386120787191}
   - component: {fileID: 8230744401016898667}
+  - component: {fileID: 2119269109003793717}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Untagged
@@ -100,3 +101,23 @@ MonoBehaviour:
   explosionPrefab: {fileID: 8899729981243215188, guid: 6dd9f4491233b464fadd85e7c5b5ea7a, type: 3}
   secondsUntilDetonation: 3
   range: 3
+--- !u!95 &2119269109003793717
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8899729981243215188}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fd837c53c27bd6e4191d72e879e0ece9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

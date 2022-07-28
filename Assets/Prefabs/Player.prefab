@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7250637301277767625}
   - component: {fileID: 7209470850044284363}
   - component: {fileID: 8711599667076002163}
+  - component: {fileID: 1875632856}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -177,3 +178,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bombPrefab: {fileID: 8899729981243215188, guid: a37e94d0a6467164f82dff55292fb10e, type: 3}
+--- !u!95 &1875632856
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7594954330554115152}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 15cc92b27d022fb4196ba184bf4b71da, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
