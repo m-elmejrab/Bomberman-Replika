@@ -717,8 +717,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef35afd35700a747801930406b6817b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundTile: {fileID: 11400000, guid: f3a9922d898adaf42b50fece6e309fcc, type: 2}
-  nonDestructibleTile: {fileID: 11400000, guid: f99f05c53b6e94f4691c07d646862d66, type: 2}
+  groundTile: {fileID: 11400000, guid: d17acf35b01f06e4cbe79dfddf8c8dd2, type: 2}
+  nonDestructibleTile: {fileID: 11400000, guid: b34325427f567104d9a03146f11a39d9, type: 2}
   destructibleTile: {fileID: 11400000, guid: 780b91707032b254c92a716421b4f0bb, type: 2}
   groundMap: {fileID: 2040878043}
   nonDestructibleMap: {fileID: 475385436}
